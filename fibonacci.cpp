@@ -1,20 +1,33 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
-    int n, i;
-    int t1 = 0, t2 = 1, nextTerm;
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
 
-    printf("Enter the number of terms: ");
-    scanf("%d", &n);
+    int t1 = 0, t2 = 1, nextTerm = 0;
 
-    printf("Fibonacci Series: ");
+    cout << "Fibonacci Series: ";
 
-    for (i = 1; i <= n; ++i) {
-        printf("%d, ", t1);
+    for (int i = 1; i <= n; ++i) {
+        // Print the first term
+        if (i == 1) {
+            cout << t1 << " ";
+            continue;
+        }
+        // Print the second term
+        if (i == 2) {
+            cout << t2 << " ";
+            continue;
+        }
+        // Calculate and print subsequent terms
         nextTerm = t1 + t2;
         t1 = t2;
         t2 = nextTerm;
+        
+        cout << nextTerm << " ";
     }
-
+    cout << endl;
     return 0;
 }
